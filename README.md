@@ -13,33 +13,43 @@ This project consists of a backend built with Node.js and Express.js and a front
 
 ## Clone Repository
 
-> git clone 'https://github.com/herveynavarro04/crispy-chainsaw.git'
-> git code crispy-chainsaw
+```
+git clone 'https://github.com/herveynavarro04/crispy-chainsaw.git'
+git code crispy-chainsaw
+```
 
 ## Install NodeJs
 
-> brew install node
+```
+brew install node
+```
 
 ## Install ExpressJs
-> cd server
-> npm install express
-> cd ..
+```
+cd server
+npm install express
+cd ..
+```
 
 ## Install  NextJs
-> cd client
-> npm install next react react-dom
-> cd ..
+```
+cd client
+npm install next react react-dom
+cd ..
+```
 
 ### Running
 
 ## Frontend
-
-> cd client
-> npm install
-> npm run dev
+```
+cd client
+npm install
+npm run dev
+```
 
 ## Backend
-
-> cd server
-> npm install
-> npm run start:dev
+```
+cd server
+npm install
+npm run start:dev
+```
