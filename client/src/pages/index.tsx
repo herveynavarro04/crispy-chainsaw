@@ -9,7 +9,9 @@ function Index() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setMessage(data.message);
+        setTimeout(() => {
+          setMessage(data.message);
+        }, 3000);
       });
   }, []);
 
