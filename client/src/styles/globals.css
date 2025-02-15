@@ -2,4 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
 
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #d5d538, #252505);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
+  animation: step 0.25s linear infinite;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 360px;
+  width: 100%;
+  padding: 20px;
+  background: #1e1e1e;
+  border: 1 px solid #2c2c2c;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.formData {
+    color: rgb(74, 73, 73);
+    background-color: #1e1e1e;
+    border: 4px solid rgb(24, 24, 24); 
+    border-radius: 16px;
+    padding: 5px; 
+}
