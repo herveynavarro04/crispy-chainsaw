@@ -6,8 +6,8 @@ This project consists of a backend built with Node.js and Express.js and a front
 
 ### Enviroment variables
 
-1. CLIENT_PORT: "3000"
-2. SERVER_PORT: "8080"
+1. CLIENT_PORT: 3000
+2. SERVER_PORT: 8080
 
 ### Prerequisites
 

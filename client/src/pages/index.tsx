@@ -1,10 +1,13 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 function Index() {
-  // const [message, setMessage] = useState("Loading...");
+  const [message, setMessage] = useState("");
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
-  
+  const actualUser = 'Hervey04';
+  const actualPassword = '0000';  
+  const router = useRouter();
   // useEffect(() => {
   //   const fetchUrl = process.env.FETCH_URL || "http://localhost:8080/api";
   //   fetch(fetchUrl)
@@ -19,8 +22,12 @@ function Index() {
 
   const handleSumbit  = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log(user);
-    console.log(password)
+
+    if (user === actualUser && password === actualPassword){
+      router.push('./dashboard');
+    } else {
+      setMessage('Invalid info');
+    }
   }
 
   return (
@@ -47,6 +54,7 @@ function Index() {
           onChange={(e) => setPassword(e.target.value)}
         /><br />
         <button onClick={handleSumbit}>sign in</button>
+        <div>{message}</div>
       </div>
     </div>
   );
