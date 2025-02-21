@@ -8,22 +8,12 @@ function Index() {
   const actualUser = 'Hervey04';
   const actualPassword = '0000';  
   const router = useRouter();
-  // useEffect(() => {
-  //   const fetchUrl = process.env.FETCH_URL || "http://localhost:8080/api";
-  //   fetch(fetchUrl)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setTimeout(() => {
-  //         setMessage(data.message);
-  //       }, 3000);
-  //     });
-  // }, []);
 
   const handleSumbit  = (event: React.FormEvent) => {
     event.preventDefault();
 
     if (user === actualUser && password === actualPassword){
+      localStorage.setItem("IsAuth", "true");
       router.push('./dashboard');
     } else {
       setMessage('Invalid info');
