@@ -25,7 +25,6 @@ function Index() {
       <div className="logo"></div>
       <div className="container">
         <h2>Sign In</h2>
-        <br />
         <input
           className="formData"
           placeholder="user"
