@@ -34,6 +34,7 @@ function Index() {
           value={user}
           onChange={(e) => setUser(e.target.value)}
         /><br />
+        <br />
         <input
           className="formData"
           placeholder="password"
