@@ -1,37 +1,76 @@
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
+import {
+  HomeIcon,
+  InfoIcon,
+  PhoneIcon,
+  CodeIcon,
+  LogOutIcon,
+  MenuIcon,
+  XIcon,
+} from 'lucide-react';
 
-export default function Dashboard() {
-  const router = useRouter();
-  const [isAuth, setIsAuth] = useState<boolean | null>(null);
+export default function DashboardPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const auth = localStorage.getItem('IsAuth');
-
-      if (!auth) {
-        router.replace('/');
-      } else {
-        setIsAuth(true);
-      }
-    }
-  }, [router]);
-
-  if (isAuth === null) {
-    return <p>Checking authentication...</p>;
-  }
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <button
-        onClick={() => {
-          localStorage.removeItem('isAuthenticated');
-          router.replace('/');
-        }}
-      >
-        Logout
+    <div className="dashboard-container">
+      {/* Mobile sidebar toggle */}
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        {sidebarOpen ? <XIcon /> : <MenuIcon />}
       </button>
+
+      {/* Sidebar */}
+      <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
+        <div className="sidebar-header">
+          <h1 className="sidebar-title">Dashboard</h1>
+        </div>
+
+        <nav className="sidebar-nav">
+          <ul className="nav-list">
+            <li className="nav-item active">
+              <a href="#" className="nav-link">
+                <HomeIcon className="nav-icon" />
+                <span>Home</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link">
+                <InfoIcon className="nav-icon" />
+                <span>About</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link">
+                <PhoneIcon className="nav-icon" />
+                <span>Contact</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#" className="nav-link">
+                <CodeIcon className="nav-icon" />
+                <span>API</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="sidebar-footer">
+          <button className="logout-button">
+            <LogOutIcon className="nav-icon" />
+            <span>Logout</span>
+          </button>
+        </div>
+      </aside>
+
+      <main className="main-content">
+        <header className="content-header">
+          <h1>Welcome to your Dashboard</h1>
+        </header>
+      </main>
     </div>
   );
 }
